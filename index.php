@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>UAS BASDAT NON RELATIONAL</title>
+		<title>LATIHAN 1 DPBO 2022</title>
 		<link rel="stylesheet" href="./vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
 	
         <?php
