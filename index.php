@@ -3,27 +3,36 @@
 	<head>
 		<title>LATIHAN 1 DPBO 2022</title>
 		<link rel="stylesheet" href="./vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
-	
         <?php
-        include "Mahasiswa.php";
+        include "TimBola.php";
 
-        $mahasiswa1 = new Mahasiswa();
-        $mahasiswa1->setNama('Udin');
-        $mahasiswa1->setNim(1903121);
-        $mahasiswa1->setGenders("Laki-laki");
-        $mahasiswa1->setProdi("Ilkom");
-        $mahasiswa1->setSemester("6");
+		//tim 1 pake setter
+        $tim1 = new TimBola();
+        $tim1->setNamaTim('Gabut FC');
+        $tim1->setNegara('Belanda');
+        $tim1->setTahunBerdiri("1999");
 
-        $mahasiswa2 = new Mahasiswa("Bambang", 1213114, "Laki-laki", "IPSE", "5");
+        $nama_pemain = array("Udin", "Eko", "Bambang","Rudi","Eko", "Utomo", "Fandi", "Yayan", "Mad Dog","Ruslan","Jajang");
+
+        $tim1->setPemain($nama_pemain);
+		
+		//tim 2 pake getter
+		$nama_pemain2 =array("Alexander", "Lakaka", "Jones", "Haji Maguaire", "Stephen Cow", "Misaki","Tsubasa","Hyuga", "Williams", "James","Phil");
+		$tim2 = new TimBola("KST Pusat","Slovakia", "2009", $nama_pemain2 );
 
         ?>
 
+      
+
     <style>
 
-    table, th, td {
+    table, th,td{
     border: 1px solid black;
     padding: 20px;
+    border-collapse: collapse;
     }
+
+  
     </style>
 
     </head>
@@ -33,37 +42,51 @@
 	
 		<div class="container">
 			<br>
-			<CENTER><h1>Mahasiswa</h1></CENTER>
+			<CENTER><h1>Data Tim Sepakbola</h1></CENTER>
 			
 		<CENTER>
 			<table>
 				<thead>
 					<tr>
-						<th scope="col">Nama</th>
-						<th scope="col">NIM</th>
-						<th scope="col">Jenis Kelamin</th>
-						<th scope="col">Program Studi</th>
-						<th scope="col">Semester</th>
+						<th >Nama Tim</th>
+						<th >Negara</th>
+						<th >Tahun Berdiri</th>
+						<th >List Pemain</th>
 						
 	
 					</tr>
 				</thead>
 				<?php
-			
+						//tim 1
 						echo "<tr>";
-						echo "<td>".$mahasiswa1->getNama()."</td>";
-						echo "<td>".$mahasiswa1->getNim()."</td>";
-						echo "<td>".$mahasiswa1->getGenders()."</td>";
-						echo "<td>".$mahasiswa1->getProdi()."</td>";
-						echo "<td>".$mahasiswa1->getSemester()."</td>";
+						echo "<td>".$tim1->getNamaTim()."</td>";
+						echo "<td>".$tim1->getNegara()."</td>";
+						echo "<td>".$tim1->getTahunBerdiri()."</td>";
+                        
+                        echo "<td>";
+                        for($i = 0; $i<=10; $i++) {
+                            if($i != 0) {
+                                echo " , ";
+                            }
+                            echo $tim1->getPemain()[$i];
+                           
+                        }
 						echo "</td>";
 						echo "</tr>";
-                        echo "<tr>";
-						echo "<td>".$mahasiswa2->getNama()."</td>";
-						echo "<td>".$mahasiswa2->getNim()."</td>";
-						echo "<td>".$mahasiswa2->getGenders()."</td>";
-						echo "<td>".$mahasiswa2->getProdi()."</td>";
-						echo "<td>".$mahasiswa2->getSemester()."</td>";
+						//tim 2
+						echo "<tr>";
+						echo "<td>".$tim2->getNamaTim()."</td>";
+						echo "<td>".$tim2->getNegara()."</td>";
+						echo "<td>".$tim2->getTahunBerdiri()."</td>";
+                        
+                        echo "<td>";
+                        for($i = 0; $i<=10; $i++) {
+                            if($i != 0) {
+                                echo " , ";
+                            }
+                            echo $tim2->getPemain()[$i];
+                           
+                        }
 						echo "</td>";
 						echo "</tr>";
 				
@@ -73,4 +96,3 @@
 		</div>
 	</body>
 </html>
-
