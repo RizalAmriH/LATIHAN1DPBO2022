@@ -6,7 +6,7 @@
         <?php
         include "TimBola.php";
 
-		//tim 1 pake setter
+		//tim 1 
         $tim1 = new TimBola();
         $tim1->setNamaTim('Gabut FC');
         $tim1->setNegara('Belanda');
@@ -16,7 +16,7 @@
 
         $tim1->setPemain($nama_pemain);
 		
-		//tim 2 pake getter
+		//tim 2
 		$nama_pemain2 =array("Alexander", "Lakaka", "Jones", "Haji Maguaire", "Stephen Cow", "Misaki","Tsubasa","Hyuga", "Williams", "James","Phil");
 		$tim2 = new TimBola("KST Pusat","Slovakia", "2009", $nama_pemain2 );
 
